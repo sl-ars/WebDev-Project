@@ -5,13 +5,13 @@
     <table>
         <thead>
             <tr>
-                <th  [ngClass]="IdClass">ID</th>
-                <th [ngClass]="NameClass">Name</th>
-                <th  [ngClass]="PriceClass">Price</th>
-                <th [ngClass]="Class24h">24h %</th>
-                <th [ngClass]="Class7d">7d %</th>
-                <th  [ngClass]="MarketCapClass">Market Cap</th>
-                <th  [ngClass]="VolumeClass">Volume (24h)</th>
+                <th (click)="sortById()" [ngClass]="IdClass">ID</th>
+                <th (click)="sortByName()" [ngClass]="NameClass">Name</th>
+                <th (click)="sortByPrice()" [ngClass]="PriceClass">Price</th>
+                <th (click)="sortBy24h()" [ngClass]="Class24h">24h %</th>
+                <th (click)="sortBy7d()" [ngClass]="Class7d">7d %</th>
+                <th (click)="sortByMarketCap()"  [ngClass]="MarketCapClass">Market Cap</th>
+                <th (click)="sortByVolume()" [ngClass]="VolumeClass">Volume (24h)</th>
             </tr>
         </thead>
         <tbody>

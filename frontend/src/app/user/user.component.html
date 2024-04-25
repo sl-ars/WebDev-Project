@@ -1,0 +1,27 @@
+<div *ngIf="isLogged">
+  <div id="side" class="half left">
+    <div id="brand" >
+      <h1 routerLink=''>CryptoTracker</h1> <a (click)="showNav()" class='nav_button'>❌</a>
+    </div>
+    <div id="profile" *ngIf="user">
+      <img src="../../assets/images/1.png" class="image">
+      <h1>Welcome, {{user.first_name}}</h1>
+      <h4>{{user.last_name}} {{user.first_name}}</h4>
+    </div>
+    <div class="tabs" routerLinkActive="Activated">
+      <nav>
+
+        <li><a routerLink='/user/profile'>👤 Profile</a></li>
+        <li><a routerLink='/user/portfolio'>💼 Portfolio</a></li>
+        <li><a routerLink='/user/currencies' appAutoFocus>💸 Currencies</a></li>
+        <li><a (click)="logout()" routerLink="">🚪 Log out</a></li>
+
+      </nav>
+    </div>
+  </div>
+
+  <div class="half right">
+    <img (click)="showNav()" src="assets/images/menu.png" class='nav_button' id="nav_button">
+    <router-outlet></router-outlet>
+  </div>
+</div>

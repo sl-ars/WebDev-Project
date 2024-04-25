@@ -1,0 +1,51 @@
+<div class="main_block">
+
+      <h1>Profile</h1>
+
+      <form *ngIf="user">
+
+        <div class="avatar">
+          <h3>Avatar</h3>
+          <div>
+            <img src="../../assets/images/1.png" class="image">
+            <label for="browse" id="">Upload</label>
+            <input type="file" accept=".png, .jpg, .jpeg" id="browse">
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="inline_block_parent">
+          <div class="inline_block_child">
+            <label for="GET-name">Name</label> <br>
+            <input [(ngModel)]="first_name" id="GET-name" type="text" name="firstname" placeholder=" " pattern="[A-Za-zА-Яа-яЁё]+" >
+          </div>
+          <div class="inline_block_child">
+            <label for="GET-surname">Last Name</label> <br>
+            <input [(ngModel)]="last_name" id="GET-surname" type="text" name="lastname" placeholder=" " pattern="[A-Za-zА-Яа-яЁё]+">
+          </div>
+        </div>
+
+
+        <hr>
+
+        <div class="inline_block_parent">
+          <div class="inline_block_child">
+            <label for="GET-email">Email</label> <br>
+            <input [(ngModel)]="email" id="GET-email" type="email" name="email" placeholder=" ">
+          </div>
+          <div class="inline_block_child">
+            <label for="GET-password">Password</label> <br>
+            <input id="GET-password" type="password" name="password" placeholder=" " disabled>
+          </div>
+        </div>
+
+        <hr>
+
+        <div>
+          <input type="submit" value="Save Changes" (click)="updateUser()">
+        </div>
+
+      </form>
+</div>
+

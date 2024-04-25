@@ -1,0 +1,54 @@
+<div class="main_block" *ngIf="user">
+
+
+  <div class="inline_block_parent">
+    <div class="inline_block_child white_list centered" >
+        <h3>Your Balance</h3>
+        <h1>${{user.balance}}</h1>
+    </div>
+    <div class="inline_block_child white_list centered">
+        <h3>Your Investments</h3>
+        <h1>${{investments}}</h1>
+    </div>
+  </div>
+
+  <hr>
+
+  <h1>Portfolio</h1>
+
+  <div class="white_list">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <tr class="tabs" *ngFor="let curr of elements">
+        <a [routerLink]="['/user/currencies', curr.currency_id]">
+          <td>{{curr.coinDetails.name}}</td></a>
+          <td>{{curr.quantity}}</td>
+          <td>${{curr.coinDetails.quote.USD.price.toFixed(2)}}</td>
+          <td class="buy-button"><button (click)="openSellBlock(curr)" style="width: 50px; font-size: 18px">$</button></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<div id="sell-block">
+  <div class="header">
+    <h1 *ngIf="currency_now">
+      You are selling <strong>{{currency_now.coinDetails.name}}</strong>
+    </h1>
+  </div>
+  <div class="input">
+    <input type="number" name="quantity" (change)="toPaySellBlock()" [(ngModel)]="quantity">
+  </div>
+  <div class="resultPrice">
+    <h2>Income: <strong>${{toPayPrice}}</strong></h2>
+  </div>
+  <div class="buy-button">
+    <button id="cancel-button" (click)="closeSellBlock()">Cancel</button>
+    <button (click)="sell()">Sell</button>
+  </div>
+</div>

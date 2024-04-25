@@ -1,0 +1,66 @@
+*{
+  font-family: "Segoe UI";
+}
+
+/* Inputs */
+input{
+  width: 100%;
+}
+
+    input[type='file']{
+      border: none;
+      width: fit-content;
+    }
+
+    input[type="submit"]{
+      width: fit-content;
+      float: right;
+      padding: 5px;
+    }
+
+    label{
+      font-weight: bold;
+    }
+
+/* Avatar Div */
+.avatar label{
+  cursor: pointer;
+  font-size: 20px;
+  border: solid 1px grey;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: dodgerblue;
+  background-color: white;
+  height: fit-content;
+  margin-left: 25px;
+}
+
+    .avatar div{
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar h3{
+      margin-bottom: 10px;
+      margin-left: 50px;
+    }
+
+    .avatar{
+      margin-bottom: 30px;
+      margin-left: 20px;
+    }
+
+    #browse{
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .image{
+      margin-bottom: 0px;
+      width: 150px;
+    }
+
+
+

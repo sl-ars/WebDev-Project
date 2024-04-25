@@ -1,0 +1,81 @@
+@media screen and (max-width: 1100px){
+  .left{
+    font-size: 10px;
+  }
+}
+
+
+.half{
+  float: left;
+  height: 100%;
+}
+
+.left{
+  background-color: rgba(255, 255, 255, 0.9);
+
+  position: absolute;
+  z-index: 1;
+  overflow-x: hidden;
+
+  visibility: hidden;
+  left: -30%;
+  width: 30%;
+  transition: 0.5s;
+}
+
+.right{
+  background-color: #eff3f6;
+  height: 100%;
+
+  margin-left: 0%;
+  width: 100%;
+}
+
+#brand{
+  font-size: larger;
+  margin: 8% 0 10% 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#brand a{
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
+#profile{
+  margin: 30px 35px;
+
+}
+
+#profile h1{
+  margin: 0;
+  font-family: "Candara Light";
+}
+
+#profile h4{
+  margin: 0;
+  font-family: "Candara Light";
+}
+
+.nav_button{
+  cursor: pointer;
+  transition: 0.5s;
+}
+#nav_button{
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 40px;
+}
+.nav_button:hover{
+  filter: brightness(0.9);
+  transform: scale(0.8);
+  transition: 0.5s;
+}
+
+
+
+
+

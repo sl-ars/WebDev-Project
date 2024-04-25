@@ -1,0 +1,133 @@
+<div *ngIf="loaded">
+    <div id="details-page">
+        <div id="wrapper">
+            <div class="metadata item">
+                <div class="logo-name">
+                    <img id="logo" [src]="currencyMetadata.logo">
+                    <h1>{{currency.name}}</h1>
+                    <span class="url-border">{{currency.symbol}}</span>
+                    <p class="url-border rank">Rank #{{currency.cmc_rank}}</p>
+                </div>
+                <div class="urls">
+                    <div class="first-row">
+                        <div class="websites dropdown" *ngIf="currencyMetadata.urls.website.length > 0">
+                            <button class="dropbtn url-border">Website</button>
+                            <div class="dropdown-content">
+                            <a *ngFor="let c of currencyMetadata.urls.website"
+                                [href]="c">{{c}}</a>
+                            </div>
+                        </div>
+                        <div class="twitter dropdown" *ngIf="currencyMetadata.urls.twitter.length > 0">
+                            <button class="dropbtn url-border">Twitter</button>
+                            <div class="dropdown-content">
+                                <a *ngFor="let c of currencyMetadata.urls.twitter"
+                                [href]="c">{{c}}</a>
+                            </div>
+                        </div>
+                        <div class="facebook dropdown" *ngIf="currencyMetadata.urls.facebook.length > 0">
+                            <button class="dropbtn url-border">Facebook</button>
+                            <div class="dropdown-content">
+                                <a *ngFor="let c of currencyMetadata.urls.facebook"
+                                [href]="c">{{c}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second-row">
+                        <div class="reddit dropdown" *ngIf="currencyMetadata.urls.reddit.length > 0">
+                            <button class="dropbtn url-border">Reddit</button>
+                            <div class="dropdown-content">
+                                <a *ngFor="let c of currencyMetadata.urls.reddit"
+                                [href]="c">{{c}}</a>
+                            </div>
+                        </div>
+                        <div class="technical_doc dropdown" *ngIf="currencyMetadata.urls.technical_doc.length > 0">
+                            <button class="dropbtn url-border">Documentation</button>
+                            <div class="dropdown-content">
+                                <a *ngFor="let c of currencyMetadata.urls.technical_doc"
+                                [href]="c">{{c}}</a>
+                            </div>
+                        </div>
+                        <div class="source_code dropdown" *ngIf="currencyMetadata.urls.source_code.length > 0">
+                            <button class="dropbtn url-border">Source code</button>
+                            <div class="dropdown-content">
+                                <a *ngFor="let c of currencyMetadata.urls.source_code"
+                                [href]="c">{{c}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="price item">
+                <p class="info-header">{{currency.name}} price ({{currency.symbol}})</p>
+                <h1>${{currency.quote.USD.price.toLocaleString('en-US')}}</h1>
+                <p class="percent-change up-change">{{currency.quote.USD.percent_change_24h.toFixed(2)}}%</p>
+                <button class="btn" (click)="openBuyBlock()">Buy</button>
+            </div>
+            <div class="market-cap item market-data">
+                <p class="info-header">Market Cap</p>
+                <p class="info-data">${{currency.quote.USD.market_cap.toLocaleString('en-US')}}</p>
+                <div class="vl"></div>
+            </div>
+            <div class="full-market-cap item market-data">
+                <p class="info-header">Fully Diluted Market Cap</p>
+                <p class="info-data">${{currency.quote.USD.fully_diluted_market_cap.toLocaleString('en-US')}}</p>
+            </div>
+            <div class="volume-24h item market-data">
+                <p class="info-header">Volume (24h)</p>
+                <p class="info-data">${{currency.quote.USD.volume_24h.toLocaleString('en-US')}}</p>
+            </div>
+            <div class="circulating-supply item market-data">
+                <p class="info-header">Volume (24h)</p>
+                <p class="info-data">{{currency.circulating_supply.toLocaleString('en-US')}}</p>
+            </div>
+        </div>
+        <div id="main">
+            <h2>{{currency.symbol}} Price Live Data</h2>
+            <p class="desc">The live {{currency.name}} price today is ${{currency.quote.USD.price.toLocaleString('en-US')}} with
+                a 24-hour trading volume of ${{currency.quote.USD.volume_24h.toLocaleString('en-US')}}. 
+                We update our {{currency.symbol}} to USD price in real-time. 
+                The current CoinMarketCap ranking is #{{currency.cmc_rank}}, with a 
+                live market cap of ${{currency.quote.USD.market_cap.toLocaleString('en-US')}}. It has a 
+                circulating supply of {{currency.circulating_supply.toLocaleString('en-US')}} {{currency.symbol}} coins.</p>
+            <h2>What Is {{currency.name}} ({{currency.symbol}})?</h2>
+            <p class="desc">{{currencyMetadata.description}}</p>
+            <div class="exchange">
+                <h2>{{currency.symbol}} To USD Converter</h2>
+                <div class="exchange-block">
+                    <div class="left-side">
+                        <img [src]="currencyMetadata.logo">
+                        <p class="exchange-symbol">{{currency.symbol}}</p>
+                        <p class="exchange-name">{{currency.name}}</p>
+                        <input type="number" name="crypto-amount" (change)="Convert()" [(ngModel)]="cryptoAmount">
+                    </div>
+                    <!-- <img id="arrows"src="/assets/images/exchange.png"> -->
+                    <div class="right-side">
+                        <div class="right-side-text">
+                            <img src="/assets/images/USD.svg">
+                            <p class="exchange-symbol">USD</p>
+                            <p class="exchange-name">United States Dollar</p>
+                            <input type="number" name="usd-amount" [(ngModel)]="resultUSD">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="buy-block">
+        <div class="header">
+            <h1>
+                You are buying <strong>{{currency.name}}</strong>
+            </h1>
+        </div>
+        <div class="input">
+            <input type="number" name="quantity" (change)="toPayBuyBlock()" [(ngModel)]="quantity">
+        </div>
+        <div class="resultPrice">
+            <h2>To pay: <strong>${{toPayPrice}}</strong></h2>
+        </div>
+        <div class="buy-button">
+            <button id="cancel-button" (click)="closeBuyBlock()">Cancel</button>
+            <button (click)="buy()">Buy</button>
+        </div>
+    </div>
+</div>

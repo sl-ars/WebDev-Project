@@ -1,0 +1,351 @@
+#wrapper, #main {
+    width: 95%;
+    margin: auto;
+}
+
+#wrapper {
+    display: grid;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(230, 228, 228);
+    padding-bottom: 60px;
+}
+
+.item {
+    padding-top: 15px;
+}
+
+h1 {
+    display: inline;
+    margin-right: 10px;
+}
+
+#logo {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.url-border {
+    background-color: #eff2f5;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(95, 94, 94);
+    border: none;
+}
+
+.rank {
+    margin: 10px 0;
+    width: fit-content;
+}
+
+.metadata {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.price {
+    margin-top: -15px;
+    grid-column: 3 / span 4;
+    grid-row: 1;
+    border-bottom: 1px solid rgb(230, 228, 228);
+    padding-bottom: 15px;
+}
+
+.btn {
+    position: relative;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    width: 120px;
+    color: white;
+    background-color: #49A6F2;
+    border: #49A6F2;
+}
+
+.btn:hover {
+    background-color: #7bbdf3;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.market-cap {
+    top: 20px;
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.full-market-cap {
+    grid-column: 4;
+    grid-row: 2;
+    padding-left: 15px;
+}
+
+.volume-24h {
+    grid-column: 5;
+    grid-row: 2;
+    padding-left: 15px;
+}
+
+.circulating-supply {
+    grid-column: 6;
+    grid-row: 2;
+    padding-left: 15px;
+}
+
+.urls {
+    margin-top: 30px;
+}
+
+.first-row {
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.second-row {
+    display: flex;
+    justify-content: flex-start;
+}
+/* dropdown menu */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropbtn {
+    color: black;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.dropbtn::after {
+content: "";
+display: block;
+background: url("/assets/images/down-arrow.png") no-repeat bottom/100%;
+width: 12px;
+height: 14px;
+float: right;
+margin-left: 5px;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: white;
+box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.2);
+border-radius: 5px;
+z-index: 1;
+white-space: nowrap;
+
+}
+
+.dropdown-content a {
+font-weight: bold;
+font-size: 12px;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+
+}
+
+.dropdown-content a:hover {background-color: #eff2f5a4;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #79797d;
+    color: white;
+}
+
+/* pricings */
+
+.info-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(106, 104, 104);
+    margin: 10px 0;
+}
+
+.info-data {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.percent-change {
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.up-change {
+    color: #17c784;
+}
+
+.up-change::before {
+    content: "";
+    display: block;
+    background: url("/assets/images/up.png") no-repeat bottom/100%;
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin-top: 5px;
+}
+
+.down-change {
+    color: #ea3943;
+}
+
+.down-change::before {
+    content: "";
+    display: block;
+    background: url("/assets/images/down.png") no-repeat bottom/100%;
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin-top: 5px;
+}
+
+/*#main section */
+#main h2 {
+    margin: 20px 0 10px;
+}
+
+.desc {
+    font-size: 18px;
+}
+
+/* exchange block */
+.exchange-block {
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+}
+
+.left-side {
+    margin: 25px 0 25px 25px;
+    text-align: left;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.right-side {
+    background-color: #eff2f5;
+    position: relative;
+    text-align: left;
+}
+
+.exchange input {
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    width: 200px;
+    font-size: 24px;
+    text-align: right;
+    font-weight: 600;
+}
+
+
+.left-side input {
+    background-color: inherit;
+    margin-right: 30px;
+    margin-top: -10px;
+}
+
+.right-side input {
+    background-color: transparent; /*#eff2f5;*/
+}
+
+.right-side-text {
+    margin: 25px 25px 25px 45px;
+}
+
+.exchange img {
+    float: left;
+    width: 30px;
+    margin: 5px 15px 0 0;
+}
+
+.exchange-symbol {
+    font-size: 14px;
+    color:rgb(95, 94, 94);
+}
+
+.exchange-name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+/* The buy block */
+#buy-block {
+    position: fixed;
+    padding: 30px 25px 40px;
+    margin: auto;
+    top: 30%;
+    right: 38%;
+    width: 25%;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 2px solid rgb(175, 175, 175);
+    border-radius: 8px;
+}
+
+#buy-block > * {
+    margin-bottom: 40px;
+}
+
+#buy-block h1, #buy-block h2 {
+    font-weight: 400;
+}
+
+#buy-block input {
+    height: 40px;
+    border: 1px solid rgb(106, 104, 104)
+}
+
+#buy-block .buy-button {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+#buy-block .buy-button button {
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: #49A6F2;
+    border: #49A6F2;
+}
+
+#buy-block .buy-button button:hover {
+    cursor: pointer;
+    background-color: #6ab6f4;
+}
+
+#buy-block #cancel-button {
+    background-color: #ed666d;
+}
+
+#buy-block #cancel-button:hover {
+    background-color: #ed898e;
+}

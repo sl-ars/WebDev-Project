@@ -1,0 +1,21 @@
+
+<div class="split left_div">
+  <div class="centered">
+    <div id="brand" [routerLink]="['']">
+      <h1 class="front">CryptoTracker</h1>
+      <h3 class="back">Your Crypto Manager</h3>
+    </div>
+  </div>
+</div>
+
+<div class="split right_div">
+  <div class="centered form_div">
+    <h2>Sign In</h2>
+    <form>
+      <input [(ngModel)]="login" id="GET-login" type="text" name="login" placeholder="Type your login" required> <br>
+      <input [(ngModel)]="password" id="GET-password" type="password" name="password" placeholder="Type your password" minlength="8" required > <br>
+      <input type="submit" value="Log In" (click)="Login()">
+    </form>
+    <p class="small_text">Don't have an account? <a [routerLink]="['/register']">Register</a> </p>
+  </div>
+</div>

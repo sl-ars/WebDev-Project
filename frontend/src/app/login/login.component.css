@@ -1,0 +1,65 @@
+@media screen and (max-width: 700px) {
+  .left_div{
+    position: relative;
+    width: 100%;
+    height: 100px;
+  }
+  .right_div{
+    width: 100%;
+    height: 60%;
+  }
+  body{
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body{
+    font-size: smaller;
+  }
+}
+
+/*Left Big Div*/
+.left_div {
+  left: 0;
+  background-color: ghostwhite;
+}
+
+/*Right Big Div*/
+.right_div {
+  right: 0;
+  background-color: white;
+}
+
+/*Div with a form*/
+.form_div{
+  width: 60%;
+}
+
+.form_div h2{
+  margin-bottom: 10px;
+}
+
+/* Logo Actions */
+.front{
+  position: absolute;
+}
+
+.back{
+  transform: rotateX(-90deg) translateZ(27px) translateY(27px);
+  filter: blur(0.5px) brightness(95%);
+}
+
+#brand:hover{
+  transform: rotateX(90deg);
+}
+
+#brand:hover .front{
+  filter: blur(0.5px) brightness(95%);
+}
+
+#brand:hover .back{
+  filter: blur(0px);
+}
+
+

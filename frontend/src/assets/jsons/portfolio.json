@@ -1,0 +1,30 @@
+[
+  {
+    "user_id": 1,
+    "crypto_id": {
+      "id": 1,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "quote": {
+        "USD": {
+          "price": 41632.147753521356
+        }
+      }
+    },
+    "quantity": 5
+  },
+  {
+    "user_id": 1,
+    "crypto_id": {
+      "id": 2,
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "quote": {
+        "USD": {
+          "price": 69531.148753280056
+        }
+      }
+    },
+    "quantity": 5
+  }
+]

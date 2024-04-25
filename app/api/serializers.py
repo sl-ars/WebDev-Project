@@ -8,7 +8,7 @@ from .models import Balance, Transaction
 from .models import Transaction, PortfolioElement
 
 
-from Что за бизнес.secrets import API_KEY
+from .secrets import API_KEY
 from .models import CMC
 import json
 

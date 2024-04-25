@@ -1,1 +1,176 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+  background-color: #f7f7f7;
+}
+
+/*Reusable classes*/
+.split{
+  width: 50%;
+  height: 100%;
+  position: fixed;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.inline_block_parent{
+  display: flex;
+}
+
+.inline_block_child{
+  width: 50%;
+  margin-right: 20px;
+}
+
+
+/*Input Fields*/
+input{
+  width: 100%;
+  height: 50px;
+
+  border: 2px solid lightgray;
+  border-radius: 7px;
+
+  outline: none;
+
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+    input:hover, input:focus{
+      border: 2px solid grey;
+
+      #outline: none;
+    }
+
+    /*Valid and Invalid Inputs*/
+    form:invalid input[type="submit"]{
+      cursor: not-allowed;
+      opacity: 50%;
+    }
+
+    input:invalid:not(:placeholder-shown){
+      border-color: lightcoral;
+    }
+
+    input:valid:not(:placeholder-shown){
+      border-color: darkseagreen;
+    }
+
+    /* Log In Button */
+    form input[type="submit"]{
+      color: white;
+      font-weight: bold;
+
+      border: none;
+
+      cursor: pointer;
+
+      background-color: dodgerblue;
+
+    }
+
+    form:valid input[type="submit"]:hover{
+      filter: brightness(95%);
+    }
+
+/* Dont't have an acccount? */
+.small_text{
+  font-size: 15px;
+}
+
+/* Link Register */
+a:link, a:visited{
+  text-decoration: none;
+  color: dodgerblue;
+  font-weight: bold;
+}
+
+/*CryptoTracker Text*/
+#brand{
+  color: dodgerblue;
+  font-weight: bold;
+  font-family: "Segoe UI";
+
+  background-color: transparent;
+  transform-style: preserve-3d;
+  transition: 1s;
+
+  cursor: pointer;
+}
+
+#brand h1, h3{
+  margin: 0;
+}
+
+/* Images */
+
+.image{
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 70px;
+}
+
+/* Block for router-outlet */
+.main_block{
+  margin: 10px 10px;
+  padding: 15px 15px;
+}
+
+.white_list{
+  height: fit-content;
+  background-color: white;
+  border: solid 1px lightgray;
+  border-radius: 15px;
+}
+
+/* Lines */
+hr{
+  width: 95%;
+  border-color: white;
+  margin: 10px 0;
+}
+
+/* List of Links */
+.tabs{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+.tabs a{
+  display: block;
+  padding: 30px 50px;
+  border-top: solid #eff3f6 1px;
+  border-bottom: solid #eff3f6 1px;
+
+  color: black;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.tabs li a:hover, a:focus{
+  background-color: rgba(248, 248, 255, 0.7);
+  outline: none;
+}
+
+

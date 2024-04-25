@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../services/user.service";
+import { UserService } from "../services/user.service";
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  login: String = "";
-  password: String = "";
+  login: string = "";
+  password: string = "";
+  showNotification: boolean = false;
 
-  constructor(private userService: UserService,
-              private router: Router) { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
@@ -20,13 +23,22 @@ export class LoginComponent implements OnInit {
       this.navigateToCurrencies();
     }
   }
-  //added userService, changed Login()
-  Login(){
-    // console.log(this.login, this.password);
-    this.userService.login(this.login, this.password).subscribe((data) => {
-      localStorage.setItem('token', data.token);
-      this.navigateToCurrencies();
-    })
+
+  Login() {
+    this.userService.login(this.login, this.password).subscribe(
+      (data) => {
+        localStorage.setItem('token', data.token);
+        this.navigateToCurrencies();
+      },
+      (error) => {
+
+        this.showNotification = true;
+
+        setTimeout(() => {
+          this.showNotification = false;
+        }, 3000);
+      }
+    );
     this.login = '';
     this.password = '';
   }
@@ -34,5 +46,4 @@ export class LoginComponent implements OnInit {
   navigateToCurrencies() {
     this.router.navigateByUrl('/user/currencies');
   }
-
 }

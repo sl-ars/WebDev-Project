@@ -1,4 +1,3 @@
-
 <div class="split left_div">
   <div class="centered">
     <div id="brand" [routerLink]="['']">
@@ -17,5 +16,10 @@
       <input type="submit" value="Log In" (click)="Login()">
     </form>
     <p class="small_text">Don't have an account? <a [routerLink]="['/register']">Register</a> </p>
+
+
+    <div *ngIf="showNotification" class="notification">
+      Invalid login or password
+    </div>
   </div>
 </div>

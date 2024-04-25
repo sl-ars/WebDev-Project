@@ -17,8 +17,8 @@ export class PortfolioComponent implements OnInit {
   investments: String = '0';
 
   //Sell block parameters
-  toPayPrice!: Number;
-  quantity!: Number;
+  toPayPrice!: number;
+  quantity!: number;
   currency_now: PortfolioElement | undefined;
 
 

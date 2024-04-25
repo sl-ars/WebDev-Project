@@ -9,7 +9,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 
 # Custom files
-from api.serializers import UserSerializer, BalanceSerializer
+from ..serializers import UserSerializer, BalanceSerializer
 
 @api_view(['GET', 'PUT'])
 @permission_classes((permissions.IsAuthenticated,))

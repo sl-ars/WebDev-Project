@@ -1,17 +1,11 @@
 from django.db import models
-import requests
 from requests import Session
-from api.secrets import API_KEY
+from .secrets import API_KEY
 from django.http.response import JsonResponse
 import json
-import random
-
 from django.contrib.auth.models import User
-from django.db import models
 
-# Create your models here.
 
-#Nur's class
 class Balance(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='balance')
     balance = models.FloatField(default=0)
@@ -71,3 +65,4 @@ class CMC:
         response = self.session.get(url, params=parameters)
         data = json.loads(response.text)['data'][str(id)]
         return JsonResponse(data, safe=False)
+

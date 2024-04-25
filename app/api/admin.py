@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Balance, Transaction, PortfolioElement
+
+
 # Register your models here.
 
 class TransactionAdmin(admin.ModelAdmin):
@@ -11,4 +13,5 @@ class PortfolioAdmin(admin.ModelAdmin):
 admin.site.register(Balance)
 admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(PortfolioElement, PortfolioAdmin)
+
 

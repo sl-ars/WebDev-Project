@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from api.models import Transaction, PortfolioElement
-from api.serializers import TransactionSerializer, PortfolioElementSerializer
+from ..models import Transaction, PortfolioElement
+from ..serializers import TransactionSerializer, PortfolioElementSerializer
 from rest_framework.response import Response
 from rest_framework.request import Request
 from django.shortcuts import Http404

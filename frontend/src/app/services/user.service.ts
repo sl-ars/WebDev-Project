@@ -17,37 +17,6 @@ export class UserService {
   ) { }
 
 
-  //FAKE DATA
-  /*getUser(): Observable<User>{
-    return this.http.get<User>('/assets/jsons/user.json');
-  }
-
-  getBalance(): Observable<Balance>{
-    return this.http.get<Balance>('/assets/jsons/balance.json');
-  }
-
-  getPortfolio(): Observable<Portfolio[]>{
-    return this.http.get<Portfolio[]>('assets/jsons/portfolio.json');
-  }
-
-  //added requests
-  createUser(login: String, name: String, last_name: String,
-    password: String): Observable<User>{
-    return this.http.post<User>('assets/jsons/portfolio.json', {
-      login,
-      name,
-      last_name,
-      password
-    });
-  }
-
-  login(login: String, password: String): Observable<AuthToken> {
-    return this.http.post<AuthToken>(`${this.BASE_URL}api/login/`, {
-      "username": login,
-      "password": password
-    })
-  }*/
-
   getUser(): Observable<User>{
     return this.http.get<User>(`${this.BASE_URL}api/user/`);
   }
@@ -80,7 +49,7 @@ export class UserService {
   }
 
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('access');
     this.router.navigateByUrl('');
   }
 

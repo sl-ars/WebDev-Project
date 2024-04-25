@@ -1,13 +1,13 @@
 from django.contrib import admin
 from django.urls import path
-from api.views import currencyList, currencyMetadata, currencyDetails,\
+from .views import currencyList, currencyMetadata, currencyDetails,\
     TransactionAPIView, PortfolioAPIView,\
     a_user, create_user
-from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 urlpatterns = [
     #obtain JWT token
-    path('login/', obtain_jwt_token),
+    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 
     #crypto api related urls
     path('currencies/', currencyList),
@@ -19,6 +19,6 @@ urlpatterns = [
     path('portfolio/', PortfolioAPIView.as_view()),
     path('portfolio/<int:id>/', PortfolioAPIView.as_view()),
 
-    path('user/', a_user, name='=user'),
-    path('register/', create_user, name='register'),
+    path('user/', a_user),
+    path('register/', create_user),
 ]

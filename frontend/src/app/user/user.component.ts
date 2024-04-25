@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(){
     this.getUser();
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('access');
     if (token) this.isLogged = true;
     else {
       this.router.navigateByUrl("login");
@@ -52,7 +52,7 @@ export class UserComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('access');
     this.router.navigateByUrl('');
   }
 

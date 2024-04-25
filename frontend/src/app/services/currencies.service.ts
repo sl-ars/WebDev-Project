@@ -8,21 +8,24 @@ import { Currency, CurrencyMetadata } from '../../models';
 })
 export class CurrenciesService {
 
-  BASE_URL = 'http://127.0.0.1:8000/api';
+  BASE_URL = 'http://127.0.0.1:8000/';
 
-  constructor(private client: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getCurrencyList(): Observable<Currency[]> {
-    //return this.client.get<Currency[]>(`${this.BASE_URL}/currencies`);
-    return this.client.get<Currency[]>('/assets/jsons/currencies.json');
+    return this.http.get<Currency[]>(`${this.BASE_URL}api/currencies/`);
+    //return this.http.get<Currency[]>('/assets/jsons/currencies.json');
   }
 
   getCurrencyMetadata(id: Number): Observable<CurrencyMetadata> {
-    return this.client.get<CurrencyMetadata>(`${this.BASE_URL}/currencies/metadata/${id}`);
+
+    return this.http.get<CurrencyMetadata>(`${this.BASE_URL}api/currencies/metadata/${id}/`);
   }
 
   getCurrency(id: Number): Observable<Currency> {
-    return this.client.get<Currency>(`${this.BASE_URL}/currencies/${id}`);
+    return this.http.get<Currency>(`${this.BASE_URL}api/currencies/${id}/`);
   }
 
 }

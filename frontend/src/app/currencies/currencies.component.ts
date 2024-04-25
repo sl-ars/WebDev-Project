@@ -22,7 +22,8 @@ export class CurrenciesComponent implements OnInit {
   VolumeClass = "";
   last_active = "";
 
-  constructor(private currenciesService: CurrenciesService,
+  constructor(
+    private currenciesService: CurrenciesService,
               ) { }
 
   ngOnInit(): void {
@@ -39,52 +40,52 @@ export class CurrenciesComponent implements OnInit {
     // this.loaded = true;
   }
 
-  // checkLastActive() {
-  //   if (this.last_active == "Id"){
-  //     this.IdClass = "";
-  //   }
-  //   else if (this.last_active == "Name"){
-  //     this.NameClass = "";
-  //   }
-  //   else if (this.last_active == "Price"){
-  //     this.PriceClass = "";
-  //   }
-  //   else if (this.last_active == "24h"){
-  //     this.Class24h = "";
-  //   }
-  //   else if (this.last_active == "7d"){
-  //     this.Class7d = "";
-  //   }
-  //   else if (this.last_active == "MarketCap"){
-  //     this.MarketCapClass = "";
-  //   }
-  //   else if (this.last_active == "Volume"){
-  //     this.VolumeClass = "";
-  //   }
-  // }
+  checkLastActive() {
+    if (this.last_active == "Id"){
+      this.IdClass = "";
+    }
+    else if (this.last_active == "Name"){
+      this.NameClass = "";
+    }
+    else if (this.last_active == "Price"){
+      this.PriceClass = "";
+    }
+    else if (this.last_active == "24h"){
+      this.Class24h = "";
+    }
+    else if (this.last_active == "7d"){
+      this.Class7d = "";
+    }
+    else if (this.last_active == "MarketCap"){
+      this.MarketCapClass = "";
+    }
+    else if (this.last_active == "Volume"){
+      this.VolumeClass = "";
+    }
+  }
 
-  // sortById() {
-  //   if (this.last_active != "Id") this.checkLastActive();
-  //   if (this.IdClass == "descending") {
-  //     this.IdClass = "ascending";
-  //   }
-  //   else {
-  //     this.IdClass = "descending";
-  //   }
-  //   this.last_active = "Id";
-  //   console.log(this.IdClass);
-  // }
+  sortById() {
+    if (this.last_active != "Id") this.checkLastActive();
+    if (this.IdClass == "descending") {
+      this.IdClass = "ascending";
+    }
+    else {
+      this.IdClass = "descending";
+    }
+    this.last_active = "Id";
+    console.log(this.IdClass);
+  }
 
-  // sortByName() {
-  //   if (this.last_active != "Name") this.checkLastActive();
-  //   if (this.NameClass == "descending") {
-  //     this.NameClass = "ascending";
-  //   }
-  //   else {
-  //     this.NameClass = "descending";
-  //   }
-  //   this.last_active = "Name";
-  // }
+  sortByName() {
+    if (this.last_active != "Name") this.checkLastActive();
+    if (this.NameClass == "descending") {
+      this.NameClass = "ascending";
+    }
+    else {
+      this.NameClass = "descending";
+    }
+    this.last_active = "Name";
+  }
 
   // sortByPrice() {
   //   if (this.last_active != "Price") this.checkLastActive();

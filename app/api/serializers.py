@@ -4,11 +4,11 @@ from django.contrib.auth.models import User
 
 from rest_framework import serializers
 
-from api.models import Balance, Transaction
-from api.models import Transaction, PortfolioElement
+from .models import Balance, Transaction
+from .models import Transaction, PortfolioElement
 
 
-from api.secrets import API_KEY
+from Что за бизнес.secrets import API_KEY
 from .models import CMC
 import json
 

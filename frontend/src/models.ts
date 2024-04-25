@@ -3,25 +3,25 @@ export interface Message {
 }
 
 export interface PortfolioElement {
-  id: Number,
-  user_id: Number,
-  currency_id: Number,
-  quantity: Number,
+  id: number,
+  user_id: number,
+  currency_id: number,
+  quantity: number,
 
   coinDetails: Currency
 }
 
 export interface Transaction {
-  id: Number,
+  id: number,
   type: String,
-  user_id: Number,
-  currency_id: Number,
-  quantity: Number,
-  price: Number
+  user_id: number,
+  currency_id: number,
+  quantity: number,
+  price: number
 }
 
 export interface AuthToken{
-  token: string
+  access: string
 }
 
 export interface User{
@@ -59,23 +59,23 @@ export interface Currency {
     id: number,
     name: String,
     symbol: String,
-    cmc_rank: Number,
-    circulating_supply: Number,
-    max_supply: Number,
+    cmc_rank: number,
+    circulating_supply: number,
+    max_supply: number,
     quote: {
         USD: {
-            price: Number,
-            market_cap: Number,
-            volume_24h: Number,
-            percent_change_24h: Number,
-            percent_change_7d: Number,
-            fully_diluted_market_cap: Number
+            price: number,
+            market_cap: number,
+            volume_24h: number,
+            percent_change_24h: number,
+            percent_change_7d: number,
+            fully_diluted_market_cap: number
         }
     }
 }
 
 export interface CurrencyMetadata {
-    id: Number,
+    id: number,
     description: String,
     logo: String,
     urls: {

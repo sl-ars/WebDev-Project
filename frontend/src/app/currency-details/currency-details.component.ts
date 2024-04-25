@@ -16,12 +16,12 @@ export class CurrencyDetailsComponent implements OnInit {
   currency!: Currency;
   currencyMetadata!: CurrencyMetadata;
   loaded!: Boolean;
-  cryptoAmount!: Number;
-  resultUSD!: Number;
+  cryptoAmount!: number;
+  resultUSD!: number;
 
   //Buy block parameters
-  toPayPrice!: Number;
-  quantity!: Number;
+  toPayPrice!: number;
+  quantity!: number;
 
 
   constructor(private currenciesService: CurrenciesService,

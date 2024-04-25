@@ -1,7 +1,7 @@
 # Web-Dev Project
 
 Description:
-Online Shop
+CryptoTracker
 
 Members:
 - Sailau Arsen 22B030431

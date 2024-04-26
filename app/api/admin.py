@@ -15,3 +15,5 @@ admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(PortfolioElement, PortfolioAdmin)
 
 
+"""MubaAA"""
+

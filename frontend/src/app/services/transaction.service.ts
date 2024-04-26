@@ -17,13 +17,12 @@ export class TransactionService {
   }
 
   addTransaction(type: String, currency_id: Number,
-    quantity: Number, price: Number):
+    quantity: Number):
    Observable<Message>{
     return this.http.post<Message>(`${this.BASE_URL}api/transactions/`, {
       type,
       currency_id,
-      quantity,
-      price
+      quantity
     })
   }
 }

@@ -65,8 +65,7 @@ export class PortfolioComponent implements OnInit {
   sell() {
     if (this.quantity > 0 && this.currency_now && this.currency_now.quantity>0){
       this.transactionService.addTransaction(
-        "SELL", this.currency_now.currency_id, this.quantity,
-        Number(this.currency_now.coinDetails.quote.USD.price.toFixed(2))).subscribe((response) => {
+        "SELL", this.currency_now.currency_id, this.quantity).subscribe((response) => {
         if (response.message == "Success"){
           alert("Currency sold!");
           this.closeSellBlock();

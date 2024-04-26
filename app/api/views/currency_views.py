@@ -11,7 +11,7 @@ def currencyList(request):
     cmc = CMC(API_KEY)
     return cmc.getAllCoins()
 
-@api_view(['GET'])
+@api_view(['POST', 'GET'])
 @permission_classes((permissions.IsAuthenticated,))
 def currencyMetadata(request, id):
     cmc = CMC(API_KEY)

@@ -6,6 +6,9 @@ from rest_framework.response import Response
 from rest_framework.request import Request
 from django.shortcuts import Http404
 
+from ..secrets import API_KEY
+from ..models import CMC
+
 class TransactionAPIView(APIView):
     permission_classes = (IsAuthenticated, )
     def get(self, request):
@@ -15,12 +18,20 @@ class TransactionAPIView(APIView):
 
     def post(self, request):
         data = request.data
+        cmc = CMC(API_KEY)
+        currency_id = data.get("currency_id")
+        coinDetails = cmc.getCoinDetailsJson(currency_id)
+        price = coinDetails["quote"]["USD"]["price"]
+
+        request.data["price"] = price
         currentUser = request.user
         data["user_id"] = currentUser.id
         serializer = TransactionSerializer(data=request.data)
+
         if serializer.is_valid():
             userBalance = currentUser.balance.balance
-            toPay = (float(data.get("price"))) * (float(data.get("quantity")))
+
+            toPay = price * (float(data.get("quantity")))
             if (data.get("type") == "BUY"):
                 if (userBalance >= toPay):
                     #Updating balance table
@@ -80,6 +91,7 @@ class PortfolioAPIView(APIView):
 
     def delete(self, request, id):
         portfolioElement = PortfolioElement.objects.get(id=id)
+
         portfolioElement.delete()
         return Response({'message': 'Element deleted'})
 

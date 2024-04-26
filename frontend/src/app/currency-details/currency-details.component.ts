@@ -25,7 +25,7 @@ export class CurrencyDetailsComponent implements OnInit {
 
 
   constructor(private currenciesService: CurrenciesService,
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
     private portfolioService: PortfolioService,
     private transactionService: TransactionService) { }
 
@@ -38,8 +38,7 @@ export class CurrencyDetailsComponent implements OnInit {
   buy() {
     if (this.quantity > 0){
       this.transactionService.addTransaction(
-        "BUY", this.currency.id, this.quantity,
-        Number(this.currency.quote.USD.price.toFixed(2))).subscribe((response) => {
+        "BUY", this.currency.id, this.quantity).subscribe((response) => {
           if (response.message == "Success"){
             alert("Currency bought!");
             this.closeBuyBlock();

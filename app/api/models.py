@@ -58,11 +58,15 @@ class CMC:
         return JsonResponse(data, safe=False)
 
     def getCoinDetails(self, id):
+
+        return JsonResponse(self.getCoinDetailsJson(id), safe=False)
+
+    def getCoinDetailsJson(self, id):
         parameters = {
             'id': id
         }
         url = self.apiUrl + '/v2/cryptocurrency/quotes/latest'
         response = self.session.get(url, params=parameters)
         data = json.loads(response.text)['data'][str(id)]
-        return JsonResponse(data, safe=False)
+        return data
 
